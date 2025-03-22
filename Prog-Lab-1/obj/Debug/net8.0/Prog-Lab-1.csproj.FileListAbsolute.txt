@@ -1,0 +1,14 @@
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\bin\Debug\net8.0\Prog-Lab-1.exe
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\bin\Debug\net8.0\Prog-Lab-1.deps.json
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\bin\Debug\net8.0\Prog-Lab-1.runtimeconfig.json
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\bin\Debug\net8.0\Prog-Lab-1.dll
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\bin\Debug\net8.0\Prog-Lab-1.pdb
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.dll
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\refint\Prog-Lab-1.dll
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.pdb
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.genruntimeconfig.cache
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\ref\Prog-Lab-1.dll
