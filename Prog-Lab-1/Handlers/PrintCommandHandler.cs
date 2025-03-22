@@ -1,4 +1,5 @@
-﻿using Prog_Lab_1.VM;
+﻿using System.Data;
+using Prog_Lab_1.VM;
 
 namespace Prog_Lab_1.Handlers;
 
@@ -17,6 +18,14 @@ public class PrintCommandHandler(IVirtualMemoryService service): ICommandHandler
             Console.WriteLine("Неправильный индекс. " + StringResource.Commands.Print.Usage);
             return;
         }
-        Console.WriteLine(service.GetItemByIndex(index));
+
+        try
+        {
+            Console.WriteLine(service.GetItemByIndex(index));
+        }
+        catch (NullReferenceException)
+        {
+            Console.WriteLine("Элемент не инициализирован. " + StringResource.Commands.Create.Usage);
+        }
     }
 }
