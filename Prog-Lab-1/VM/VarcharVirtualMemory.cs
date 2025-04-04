@@ -2,9 +2,6 @@ using System.Text;
 
 namespace VM.Domain;
 
-/// <summary>
-/// Represents a virtual memory for storing variable-length strings.
-/// </summary>
 public class VarcharVirtualMemory : IVirtualMemory<string>
 {
     private const int ElementsPerPage = 128;
@@ -13,13 +10,7 @@ public class VarcharVirtualMemory : IVirtualMemory<string>
     private readonly ISwapFile _swapFile;
     private readonly FileStream _dataFile;
     private readonly int _size;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="VarcharVirtualMemory"/> class.
-    /// </summary>
-    /// <param name="swapFile">The swap file used to manage pages of memory.</param>
-    /// <param name="dataFileName">The name of the data file used to store string values.</param>
-    /// <param name="maxStringSize">The maximum size of the strings to be stored.</param>
+    
     public VarcharVirtualMemory(ISwapFile swapFile, string dataFileName, int maxStringSize, int size)
     {
         _maxStringSize = maxStringSize;
@@ -27,14 +18,7 @@ public class VarcharVirtualMemory : IVirtualMemory<string>
         _dataFile = new FileStream(dataFileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
         _size = size;
     }
-
-    /// <summary>
-    /// Sets the string value at the specified index in the virtual memory.
-    /// </summary>
-    /// <param name="index">The index at which to set the value.</param>
-    /// <param name="value">The string value to set.</param>
-    /// <exception cref="IndexOutOfRangeException">Thrown when the index is out of range.</exception>
-    /// <exception cref="ArgumentException">Thrown when the string exceeds the maximum size.</exception>
+    
     public void Set(int index, string value)
     {
         if (index < 0 || index >= _size)
@@ -63,14 +47,7 @@ public class VarcharVirtualMemory : IVirtualMemory<string>
 
         _swapFile.SavePage(page);
     }
-
-    /// <summary>
-    /// Gets the string value at the specified index in the virtual memory.
-    /// </summary>
-    /// <param name="index">The index from which to get the value.</param>
-    /// <returns>The string value at the specified index.</returns>
-    /// <exception cref="IndexOutOfRangeException">Thrown when the index is out of range.</exception>
-    /// <exception cref="InvalidOperationException">Thrown when the element is not initialized.</exception>
+    
     public string Get(int index)
     {
         if (index < 0)
@@ -91,10 +68,7 @@ public class VarcharVirtualMemory : IVirtualMemory<string>
         var bytes = reader.ReadBytes(length);
         return Encoding.UTF8.GetString(bytes);
     }
-
-    /// <summary>
-    /// Disposes the resources used by the virtual memory.
-    /// </summary>
+    
     public void Dispose()
     {
         _swapFile.Dispose();

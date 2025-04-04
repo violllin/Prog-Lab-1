@@ -12,3 +12,4 @@ C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\refint\Prog-
 C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.pdb
 C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.genruntimeconfig.cache
 C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\ref\Prog-Lab-1.dll
+C:\Users\Admin\RiderProjects\Prog-Lab-1\Prog-Lab-1\obj\Debug\net8.0\Prog-Lab-1.sourcelink.json

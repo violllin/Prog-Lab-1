@@ -3,9 +3,6 @@ namespace VM.Domain;
 using System;
 using System.Text;
 
-/// <summary>
-/// Represents a virtual memory for storing fixed-length strings.
-/// </summary>
 public class CharVirtualMemory : IVirtualMemory<string>
 {
     private const int ElementsPerPage = 128;
@@ -14,14 +11,7 @@ public class CharVirtualMemory : IVirtualMemory<string>
     private readonly int _realFixedStringLength;
     private readonly int _intPerString;
     private readonly int _size;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="CharVirtualMemory"/> class.
-    /// </summary>
-    /// <param name="pageBuffer">The page buffer used to manage pages of memory.</param>
-    /// <param name="fixedStringLength">The fixed length of the strings to be stored.</param>
-    /// <param name="size">The length of the array</param>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when the fixed string length is negative or zero.</exception>
+    
     public CharVirtualMemory(IPageBuffer pageBuffer, int fixedStringLength, int size)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(fixedStringLength, "Длина строки");
@@ -33,13 +23,6 @@ public class CharVirtualMemory : IVirtualMemory<string>
         _size = size;
     }
 
-    /// <summary>
-    /// Sets the string value at the specified index in the virtual memory.
-    /// </summary>
-    /// <param name="index">The index at which to set the value.</param>
-    /// <param name="value">The string value to set.</param>
-    /// <exception cref="IndexOutOfRangeException">Thrown when the index is out of range.</exception>
-    /// <exception cref="ArgumentException">Thrown when the string is too long.</exception>
     public void Set(int index, string value)
     {
         if (index < 0 || index >= _size)
@@ -76,14 +59,7 @@ public class CharVirtualMemory : IVirtualMemory<string>
             startElementIndex += toWrite;
         }
     }
-
-    /// <summary>
-    /// Gets the string value at the specified index in the virtual memory.
-    /// </summary>
-    /// <param name="index">The index from which to get the value.</param>
-    /// <returns>The string value at the specified index.</returns>
-    /// <exception cref="IndexOutOfRangeException">Thrown when the index is out of range.</exception>
-    /// <exception cref="InvalidOperationException">Thrown when the element is not initialized.</exception>
+    
     public string Get(int index)
     {
         if (index < 0)
@@ -119,9 +95,6 @@ public class CharVirtualMemory : IVirtualMemory<string>
         return Encoding.UTF8.GetString(bytes).TrimEnd('\0');
     }
 
-    /// <summary>
-    /// Disposes the resources used by the virtual memory.
-    /// </summary>
     public void Dispose()
     {
         _pageBuffer.Dispose();
